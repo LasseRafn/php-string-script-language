@@ -127,4 +127,11 @@ class DetectLanguageTest extends TestCase
         $this->assertTrue(StringScript::isArmenian('բենգիմžē'));
         $this->assertFalse(StringScript::isArmenian('Hello world, and welcome this package.'));
     }
+
+    /** @test */
+    public function can_detect_hebrew()
+    {
+        $this->assertTrue(StringScript::isHebrew('א ב ג ד ה ו ז ח ט י'));
+        $this->assertFalse(StringScript::isHebrew('Hello world, and welcome this package.'));
+    }
 }
