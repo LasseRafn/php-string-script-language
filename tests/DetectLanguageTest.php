@@ -106,4 +106,11 @@ class DetectLanguageTest extends TestCase
         $this->assertTrue(StringScript::isBengali('জ্জ ǰǰô জ্ঞ'));
         $this->assertFalse(StringScript::isBengali('Hello world, and welcome this package.'));
     }
+
+    /** @test */
+    public function can_detect_buhid()
+    {
+        $this->assertTrue(StringScript::isBuhid('ᝃ	ᝄ	ᝅ	ᝆ	ᝇ	ᝈ	ᝉ	ᝊ	ᝋ	ᝌ	ᝍ	ᝎ	ᝏ	ᝐ	ᝑ'));
+        $this->assertFalse(StringScript::isBuhid('Hello world, and welcome this package.'));
+    }
 }
