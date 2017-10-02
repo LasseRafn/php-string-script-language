@@ -117,7 +117,7 @@ class DetectLanguageTest extends TestCase
     /** @test */
     public function can_detect_devanagari()
     {
-        $this->assertTrue(StringScript::isDevanagari('ᝃ	ᝄ	ᝅ	ᝆ	ᝇ	ᝈ	ᝉ	ᝊ	ᝋ	ᝌ	ᝍ	ᝎ	ᝏ	ᝐ	ᝑ'));
+        $this->assertTrue(StringScript::isDevanagari('सदाऽऽत्मा'));
         $this->assertFalse(StringScript::isDevanagari('Hello world, and welcome this package.'));
     }
 }
