@@ -92,4 +92,11 @@ class DetectLanguageTest extends TestCase
         $this->assertTrue(StringScript::isBraille('⠡⠣⠩⠹⠱⠫⠻⠳⠪⠺'));
         $this->assertFalse(StringScript::isBraille('Hello world, and welcome this package.'));
     }
+
+    /** @test */
+    public function can_detect_bopomofo()
+    {
+        $this->assertTrue(StringScript::isBopomofo('瓶	ㄆㄧㄥˊ子	ㄗ˙or	ㄆㄧㄥˊ	ㄗ˙瓶	子'));
+        $this->assertFalse(StringScript::isBopomofo('Hello world, and welcome this package.'));
+    }
 }
