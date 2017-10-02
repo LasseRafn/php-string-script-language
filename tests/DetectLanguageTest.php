@@ -85,4 +85,11 @@ class DetectLanguageTest extends TestCase
         $this->assertTrue(StringScript::isHangul('ㄱ	ㅋ	ㄲㅅ		ㅆㅈ	ㅊ	ㅉㄷ	ㅌ	ㄸㅂ	ㅍ	ㅃ'));
         $this->assertFalse(StringScript::isHangul('Hello world, and welcome this package.'));
     }
+
+    /** @test */
+    public function can_detect_braille()
+    {
+        $this->assertTrue(StringScript::isBraille('⠡⠣⠩⠹⠱⠫⠻⠳⠪⠺'));
+        $this->assertFalse(StringScript::isBraille('Hello world, and welcome this package.'));
+    }
 }
