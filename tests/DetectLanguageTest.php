@@ -99,4 +99,11 @@ class DetectLanguageTest extends TestCase
         $this->assertTrue(StringScript::isBopomofo('瓶	ㄆㄧㄥˊ子	ㄗ˙or	ㄆㄧㄥˊ	ㄗ˙瓶	子'));
         $this->assertFalse(StringScript::isBopomofo('Hello world, and welcome this package.'));
     }
+
+    /** @test */
+    public function can_detect_bengali()
+    {
+        $this->assertTrue(StringScript::isBengali('জ্জ ǰǰô জ্ঞ'));
+        $this->assertFalse(StringScript::isBengali('Hello world, and welcome this package.'));
+    }
 }
